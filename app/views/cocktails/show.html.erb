@@ -1,0 +1,21 @@
+
+<div class="p-3 mb-2 bg-info text-white text-center"><h1><%= @cocktail.name %></h1></div>
+
+<div class="container">
+  <div class="shadow-sm p-3 mb-5 bg-white rounded">
+    <h4>La Recette</h4>
+    <div>
+        <% @cocktail.doses.each do |dose| %>
+          <p> <%= dose.ingredient.name %> </p>
+          <p> <%= dose.description %> </p>
+        <% end %>
+    </div>
+  </div>
+
+  <div class="shadow-sm p-3 mb-5 bg-white rounded">
+  <%= render "doses/new", cocktail: @cocktail, dose: @dose %>
+
+  <%= link_to 'Back to all cocktails', cocktails_path %>
+  </div>
+
+</div>
