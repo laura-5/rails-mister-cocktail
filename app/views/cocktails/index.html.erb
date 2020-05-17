@@ -1,22 +1,16 @@
-<div class="p-3 mb-2 bg-info text-white text-center"><h1>Discover all the Cocktails</h1></div>
-
-  <div class="container">
-
-  <div class="shadow-sm p-3 mb-5 bg-white rounded">
-      <% @cocktails.each do |cocktail| %>
-        <div>
-          <%= link_to cocktail_path(cocktail) do %>
-           <p><%= cocktail.name %></p>
-          <% end %>
-        </div>
-     <% end %>
-    </div>
-
-  <div class="shadow-sm p-3 mb-5 bg-white rounded">
+<div class="container">
+  <div class="p-3 mb-2 bg-info text-white text-center"><h1>Discover all the Cocktails</h1></div>
+    <div class="shadow-sm p-3 mb-5 bg-white rounded">
+    <% @cocktails.each do |cocktail| %>
     <div>
-      <%= link_to new_cocktail_path do %>
-      <p> Ajouter un nouveau cocktail </p>
+      <%= link_to cocktail_path(cocktail) do %>
+      <p><%= cocktail.name %></p>
       <% end %>
     </div>
+    <div>
+      <% end %>
+      <%= link_to new_cocktail_path do %>
+      <button type="button" class="btn btn-info">Ajouter un nouveau cocktail</button>
+      <% end %>
     </div>
   </div>
