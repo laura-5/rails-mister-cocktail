@@ -1,8 +1,25 @@
+<div>
+  <nav class="navbar navbar-light" style="background-color: #FFFFFF;">
+    <a class="navbar-brand" href="#">
+      <img src="https://images.unsplash.com/photo-1542849187-5ec6ea5e6a27?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1647&q=80" class="avatar" class="d-inline-block align-top" alt="">
+    Best Cocktails Ever
+    </a>
+  </nav>
+</div>
+
 <div class="container">
+
+ <%= cl_image_tag("aqt71oh1qszbfhzlzgu3",
+      width: 690, height: 300, crop: :fill) %>
+
   <div class="p-3 mb-2 bg-info text-white text-center"><h1>Discover all the Cocktails</h1></div>
     <div class="shadow-sm p-3 mb-5 bg-white rounded">
     <% @cocktails.each do |cocktail| %>
     <div>
+      <div class="d-inline-flex">
+      <%= cl_image_tag("aqt71oh1qszbfhzlzgu3",
+      width: 200, height: 200, crop: :fill) %>
+      </div>
       <%= link_to cocktail_path(cocktail) do %>
       <p><%= cocktail.name %></p>
       <% end %>
