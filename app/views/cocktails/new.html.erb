@@ -1,17 +1,20 @@
 <div>
   <nav class="navbar navbar-light" style="background-color: #FFFFFF;">
-    Best Cocktails Ever
+    <a class="ml-4 navbar-brand" href="#">
+      <img src="https://images.unsplash.com/photo-1542849187-5ec6ea5e6a27?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1647&q=80" class="avatar avatar-32 img-circle" class="d-inline-block align-top" alt="">
+      Best Cocktails Ever
+    </a>
   </nav>
 </div>
 
 <div class="container">
 
-<div class="p-3 mb-2 bg-info text-white text-center"><h1>Create a new cocktail</h1></div>
+<div class="p-3 mb-2 bg-dark text-white text-center"><h1>Create a new cocktail</h1></div>
 
   <div class="shadow-sm p-3 mb-5 bg-white rounded">
     <%= simple_form_for @cocktail do |f| %>
       <%= f.input :name %>
-      <%= f.button :submit %>
+      <button type="submit" class="btn btn-outline-dark">Create</button>
     <% end %>
   </div>
 </div>

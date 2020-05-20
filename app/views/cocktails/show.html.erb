@@ -1,15 +1,30 @@
+<div>
+  <nav class="navbar navbar-light" style="background-color: #FFFFFF;">
+    <a class="ml-4 navbar-brand" href="#">
+      <img src="https://images.unsplash.com/photo-1542849187-5ec6ea5e6a27?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1647&q=80" class="avatar avatar-32 img-circle" class="d-inline-block align-top" alt="">
+      Best Cocktails Ever
+    </a>
+  </nav>
+</div>
+
 <div class="container">
 
-<div class="p-3 mb-2 bg-info text-white text-center"><h1><%= @cocktail.name %></h1></div>
+<div class="p-3 mb-2 bg-dark text-white text-center"><h1><%= @cocktail.name %></h1></div>
 
   <div class="shadow-sm p-3 mb-5 bg-white rounded">
-    <h4>The recipe</h4>
+    <div class="d-flex justify-content-md-start">
+    <%= cl_image_tag("aqt71oh1qszbfhzlzgu3",
+      width: 250, height: 250, crop: :fill) %>
+
     <div>
         <% @cocktail.doses.each do |dose| %>
-          <p> <%= dose.ingredient.name %> </p>
-          <p> <%= dose.description %> </p>
-          <%= link_to "delete",dose_path(dose), method: :delete %>
+          <div class="ml-2"> <%= dose.ingredient.name %> </div>
+          <div class="ml-2"> <%= dose.description %> </div>
+          <div class="ml-2">
+          <%= link_to "Delete",dose_path(dose), method: :delete %>
+          </div>
         <% end %>
+      </div>
     </div>
   </div>
 
@@ -17,7 +32,7 @@
   <%= render "doses/new", cocktail: @cocktail, dose: @dose %>
   </div>
 
-  <button type="button" class="btn btn-info"><%= link_to 'Back to all cocktails', cocktails_path %></button>
+  <button type="button" class="btn btn-outline-dark"><%= link_to 'Back to all cocktails', cocktails_path %></button>
 
 
 </div>

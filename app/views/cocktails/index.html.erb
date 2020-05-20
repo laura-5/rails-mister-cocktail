@@ -1,33 +1,31 @@
 <div>
   <nav class="navbar navbar-light" style="background-color: #FFFFFF;">
-    <a class="navbar-brand" href="#">
-      <img src="https://images.unsplash.com/photo-1542849187-5ec6ea5e6a27?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1647&q=80" class="avatar" class="d-inline-block align-top" alt="">
-    Best Cocktails Ever
+    <a class="ml-4 navbar-brand" href="#">
+      <img src="https://images.unsplash.com/photo-1542849187-5ec6ea5e6a27?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1647&q=80" class="avatar avatar-32 img-circle" class="d-inline-block align-top" alt="">
+      Best Cocktails Ever
     </a>
   </nav>
 </div>
-
 <div class="container">
-
- <%= cl_image_tag("aqt71oh1qszbfhzlzgu3",
-      width: 690, height: 300, crop: :fill) %>
-
-  <div class="p-3 mb-2 bg-info text-white text-center"><h1>Discover all the Cocktails</h1></div>
-    <div class="shadow-sm p-3 mb-5 bg-white rounded">
-    <% @cocktails.each do |cocktail| %>
-    <div>
-      <div class="d-inline-flex">
+  <%= cl_image_tag("aqt71oh1qszbfhzlzgu3",
+  width: 930, height: 300, crop: :fill) %>
+  <div class="p-3 mb-2 bg-white text-dark text-center"><h4>Discover all the Cocktails</h4>
+    <div class="d-flex m-3">
+      <% @cocktails.each do |cocktail| %>
       <%= cl_image_tag("aqt71oh1qszbfhzlzgu3",
-      width: 200, height: 200, crop: :fill) %>
+      width: 250, height: 250, crop: :fill) %>
+      <div class="d-flex flex-column bd-highlight">
+        <div class="p-4 bd-highlight"><%= link_to cocktail_path(cocktail) do %></div>
+        <div class="p-5 bd-highlight"><%= cocktail.name %></div>
+        <% end %>
       </div>
-      <%= link_to cocktail_path(cocktail) do %>
-      <p><%= cocktail.name %></p>
       <% end %>
     </div>
     <div>
-      <% end %>
+    </div>
+    <div>
       <%= link_to new_cocktail_path do %>
-      <button type="button" class="btn btn-info">Add a new Cocktail</button>
+      <button type="button" class="btn btn-outline-dark">Add a new Cocktail</button>
       <% end %>
     </div>
   </div>
